@@ -5,7 +5,7 @@ foo = let a = 1
 lend amount balance = if amount < reserve * 0.5
                       then Just newBalance
                       else Nothing
-    where reserve = 100
+    where reserve = 50
           newBalance = balance - amount 
 
 pluralise :: String -> [Int] -> [String]
