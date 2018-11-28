@@ -59,3 +59,21 @@ avgList [] = 0
 -- pro5 reverse
 reserve (x:xs) = reserve(xs) ++ [x]
 reserve [] = []
+
+-- back content(hui wen)
+backContent (x:xs) = [x] ++ backContent(xs) ++ [x]
+backContent [] = [] 
+
+-- intersperse "," ["a","b"] -> "a,b"
+intersperse symbol (x:xs) = 
+      if xs == []
+            then x
+      else 
+            x ++ symbol ++ intersperse symbol xs
+intersperse symbol [] = []
+
+--考虑三个二维的点 a, b，和c．如果我们观察沿着线段ＡＢ（由a,b节点组成）和线段ＢＣ（由b,c节点组成）
+--形成的角度，它或者转向（turn）左边，或者转向右边，
+--或者组成一条直线．定义一个 Direction（方向）的数据类型反映这些可能的情况
+
+data direction = direction LEFT | RIGHT | STRAIGHT deriving(Show)
