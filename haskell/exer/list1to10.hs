@@ -9,3 +9,11 @@
 -- pro5 reverse
 reserve (x:xs) = reserve(xs) ++ [x]
 reserve [] = []
+
+-- pro 7
+compress (x:xs) = 
+    if x == 
+        then x ++ compress(xs)
+    else
+        compress(xs)
+compress [] = []
